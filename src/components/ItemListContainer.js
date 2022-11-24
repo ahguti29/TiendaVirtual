@@ -14,7 +14,7 @@ const ItemListContainer = () => {
     ).then((data) => {
       if (category) {
         const categories = data.filter(
-          (product) => product.category === category
+          (products) => products.category === category
         );
         setProducts(categories);
       } else {
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
   }
 
   return (
-    <div className="h-full">
+    <div className="container">
       <ItemList products={products} />
     </div>
   );

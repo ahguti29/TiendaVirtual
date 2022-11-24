@@ -1,14 +1,16 @@
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
+import Logo from '../assets/images/tqnegrojpg.jpg';
 
 const NavBar = ({ greeting }) => {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-xl navbar-dark bg-primary">
+			<nav className="navbar navbar-expand-xl navbar-dark headerpag">
 				<div className="container">
 					<div>
 						<a className="navbar-brand" href="./index.html">
 							<img
-								src=""
+								src={Logo}
 								alt="logo trepadores Quindío"
 								width="170"
 								height="60"
@@ -20,32 +22,45 @@ const NavBar = ({ greeting }) => {
 					<div className="collapse navbar-collapse" id="navbarNav">
 						<ul className="navbar-nav ms-auto fw-semibold">
 							<li className="nav-item">
-								<a className="nav-link text-dark" href="./index.html">
+								<Link to="/" className="nav-link">
 									HOME
-								</a>
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link text-dark" href="./pages/camisetas.html">
+								<Link
+									to="/category/POLOS"
+									className="nav-link"
+									href="./pages/camisetas.html"
+								>
 									CAMISETAS
-								</a>
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link text-dark" href="./pages/busos.html">
+								<Link
+									to="/category/POLOS"
+									className="nav-link"
+									href="./pages/busos.html"
+								>
 									BUSOS
-								</a>
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link text-dark" href="./pages/gorras.html">
+								<Link
+									to="/category/Gorras"
+									className="nav-link"
+									href="./pages/gorras.html"
+								>
 									GORRAS
-								</a>
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a
-									className="nav-link text-dark"
+								<Link
+									to="/category/Gorras"
+									className="nav-link"
 									href="./pages/regulation.html"
 								>
 									ACCESORIOS
-								</a>
+								</Link>
 							</li>
 						</ul>
 						<CartWidget />
