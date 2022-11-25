@@ -22,7 +22,7 @@ export const item = [
     {
         id:"3",
         name: "POLO AZUL",
-        category: "POLOS",
+        category: "BUSOS",
         description: "Polo talla s",
         stock: 6,
         price: 25000,

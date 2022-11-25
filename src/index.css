@@ -34,3 +34,31 @@ code {
   width: 280px;
   height: 320px;
 }
+
+.card-title{
+  align-items: center;
+  text-align: center;
+}
+
+btn{
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.wish-icon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 99;
+	cursor: pointer;
+	font-size: 20px;
+	color: #abb0b8;
+}
+
+.item-price{
+	opacity: 0.7;
+	margin-right: 5px;
+  font-size: 13px;
+	padding: 2px 0;
+}

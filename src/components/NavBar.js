@@ -30,14 +30,13 @@ const NavBar = ({ greeting }) => {
 								<Link
 									to="/category/POLOS"
 									className="nav-link"
-									href="./pages/camisetas.html"
 								>
 									CAMISETAS
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
-									to="/category/POLOS"
+									to="/category/BUSOS"
 									className="nav-link"
 									href="./pages/busos.html"
 								>

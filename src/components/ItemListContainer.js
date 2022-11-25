@@ -10,7 +10,7 @@ const ItemListContainer = () => {
     new Promise((resolve) =>
       setTimeout(() => {
         resolve(item);
-      }, 2000)
+      }, 1000)
     ).then((data) => {
       if (category) {
         const categories = data.filter(
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container btn">
       <ItemList products={products} />
     </div>
   );
