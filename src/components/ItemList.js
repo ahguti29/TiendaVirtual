@@ -1,6 +1,6 @@
-import Item from "./Item"
+import { Item } from "./Item"
 
-const ItemList = ({ products }) => {
+export const ItemList = ({ products }) => {
     return (
         <div className="container">
           <ul className="row">
@@ -11,5 +11,3 @@ const ItemList = ({ products }) => {
         </div>
     );
   };
-  
-  export default ItemList;

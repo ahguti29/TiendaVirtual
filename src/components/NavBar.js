@@ -2,7 +2,7 @@ import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/tqnegrojpg.jpg';
 
-const NavBar = ({ greeting }) => {
+const NavBar = () => {
 	return (
 		<div>
 			<nav className="navbar navbar-expand-xl navbar-dark headerpag">
@@ -30,6 +30,8 @@ const NavBar = ({ greeting }) => {
 								<Link
 									to="/category/POLOS"
 									className="nav-link"
+
+									
 								>
 									CAMISETAS
 								</Link>
@@ -66,7 +68,6 @@ const NavBar = ({ greeting }) => {
 					</div>
 				</div>
 			</nav>
-			<p>{greeting}</p>
 		</div>
 	);
 };

@@ -1,4 +1,4 @@
-export const item = [
+/* export const item = [
     {
         id:"1",
         name: "POLO",
@@ -38,5 +38,5 @@ export const item = [
         price: 18000,
         img: "https://calvincolombia.vteximg.com.br/arquivos/ids/185861-650-709/K60K608846_BDS_1.jpg?v=637983655285930000",
     },
-];
+]; */
 

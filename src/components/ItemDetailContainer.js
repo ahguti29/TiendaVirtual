@@ -1,9 +1,24 @@
-import { useEffect, useState } from 'react';
+import {useGetItem} from "../hooks/useGetItem"
+/* import { useEffect, useState } from 'react'; */
 import ItemDetail from './ItemDetail';
-import { useParams } from 'react-router-dom';
-import { item as itemMock } from '../mocks/item.mock';
+/* import { useParams } from 'react-router-dom';
+import { item as itemMock } from '../mocks/item.mock'; */
+
 
 const ItemDetailContainer = () => {
+	const item = useGetItem();
+  
+	if (!item) {
+	  return "...Loading";
+	}
+  
+	return (
+	  <div className="flex justify-center items-center ">
+		<ItemDetail item={item} />
+	  </div>
+	);
+  };
+/* const ItemDetailContainer = () => {
 	const { id } = useParams();
 	const [item, setItem] = useState(null);
 
@@ -23,6 +38,6 @@ const ItemDetailContainer = () => {
 	}
 
 	return <ItemDetail item={item} />;
-};
+}; */
 
 export default ItemDetailContainer;

@@ -1,27 +1,46 @@
-import {Link} from 'react-router-dom';
-const Item = ({ product }) => {
+import { useNavigate } from "react-router-dom";
+import { useGetItemImg } from "../hooks/useGetItemImg";
+
+export const Item = ({ product, quantityAdded }) => {
+	const navigate = useNavigate();
+	const img = useGetItemImg(product.img);
+  
+	const description = product.description.slice(0, 30);
+	const title = product.name.slice(0, 20);
+  
+	function handleNavigate() {
+	  navigate(`/item/${product.id}`);
+	}
+  
+	if (!img) {
+	  return "...Loading";
+	}
+
 	return (
 		<div className="col-sm-12 col-md-6 col-lg-4 pt-3 pb-3">
-			<div className="card style-card ">
+			<div className="card style-card">
 				<div className="card-body">
-					<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-					<img src={product.img} className="card-img-top card-pers " alt="Product" />
-					<h5 className="card-title">{product.name}</h5>
+					<span className="wish-icon"><i className="fa fa-heart-o"></i></span>
+					<img src={img} className="card-img-top card-pers cuadro" alt="Product" />
+					<span>{product.name.length > 20 ? `${title} ...` : product.name}</span>
 					<div class="star-rating">
 						<ul class="list-inline">
-								<li class="list-inline-item"><i class="fa fa-star"></i></li>
-								<li class="list-inline-item"><i class="fa fa-star"></i></li>
-								<li class="list-inline-item"><i class="fa fa-star"></i></li>
-								<li class="list-inline-item"><i class="fa fa-star"></i></li>
-								<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+								<li className="list-inline-item"><i className="fa fa-star"></i></li>
+								<li className="list-inline-item"><i className="fa fa-star"></i></li>
+								<li className="list-inline-item"><i className="fa fa-star"></i></li>
+								<li className="list-inline-item"><i className="fa fa-star"></i></li>
+								<li className="list-inline-item"><i className="fa fa-star-o"></i></li>
 							</ul>
 						</div>
-						<p class="item-price"><b>${product.price}</b></p>
-					<Link to={`/item/${product.id}`} style = {{textDecoration:'none'}}> <button className='btn btn-warning'>Detalle</button> </Link>
+						<p className="item-price"><b>${product.price}</b></p>
+						<span className="descripcionP">
+                			{quantityAdded ? "Agregados" : " En Stock"}:{" "}
+                			{quantityAdded || product.stock}
+            			</span>
+					<button onClick={handleNavigate}className='btn btn-warning'>Detalle</button>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Item;

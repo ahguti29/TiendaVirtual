@@ -4,7 +4,7 @@ export const Layout = ({children}) => {
     return (
         <main>
             <NavBar/>
-            {children}
+            <section>{children}</section>
         </main>
     );
 };

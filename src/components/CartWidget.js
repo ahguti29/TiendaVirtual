@@ -1,6 +1,20 @@
+import React from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { BiCartAlt } from 'react-icons/bi';
+import { CartContext } from '../context/cartContext';
 const CartWidget = () => {
-    return ( <div className="d-flex d-none d-md-flex">
-               <button className="rounded-circle" ><i class='bi bi-cart3'></i></button>   
-            </div> )
-}
+	const { productsAdded } = useContext(CartContext);
+	const count = productsAdded.length;
+	return (
+		<div>
+			<Link to="/cart" className="">
+				<div>
+					<BiCartAlt size={30} />
+				</div>
+				{count > 0 && <span className="flex justify-center ">{count}</span>}
+			</Link>
+		</div>
+	);
+};
 export default CartWidget;
