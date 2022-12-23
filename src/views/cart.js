@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import EmptyCart from "../assets/images/empty.png";
 import { Layout } from "../components/Layout";
 import { TrashWidget } from "../components/TrashWidget";
 import { CartContext } from "../context/cartContext";
 import { Item } from "../components/Item"
+
 
 const CartView = () => {
   const navigate = useNavigate();
@@ -16,26 +16,25 @@ const CartView = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col max-w-[50%]">
+      <div className="m-5">
         {items.length === 0 ? (
-          <div className="flex flex-col items-center justify-center">
-            <img src={EmptyCart} alt="Empty Cart" className="w-44 h-44" />
-            <h1 className="text-2xl">No has agregado productos</h1>
+          <div className=" justify-center text-center">
+            <h1 className="text-white text-center">No has agregado productos</h1>
             <button
               onClick={() => navigate("/")}
-              className="rounded-lg p-2 bg-gray-800 text-white mt-4"
+              className="p-2 btn btn-warning text-white m-4"
             >
-              Ir al Inicio
+              Volver al Inicio
             </button>
           </div>
         ) : (
-          <div>
-            <div className="flex gap-4">
+          <div className="justify-center text-center">
+            <div className="align-items-center text-center">
               {items.map((product) => {
                 const quantityAdded = product.quantityAdded;
 
                 return (
-                  <div className="relative">
+                  <div className="justify-center text-center">
                     <Item
                       product={product.item}
                       quantityAdded={quantityAdded}
@@ -47,14 +46,14 @@ const CartView = () => {
             </div>
             <div className="flex justify-end mt-4">
               <div className="flex flex-col">
-                <span>
+                <span className="text-white">
                   Total a pagar: <strong>${totalAmount}</strong>
                 </span>
                 <button
                   onClick={goToCheckout}
-                  className="rounded-lg p-2 bg-gray-800 text-white"
+                  className="rounded-lg ms-3 p-2 btn btn-success text-white"
                 >
-                  Ir al Checkout
+                  Ir a Checkout
                 </button>
               </div>
             </div>

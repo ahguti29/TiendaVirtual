@@ -8,11 +8,11 @@ const CartWidget = () => {
 	const count = productsAdded.length;
 	return (
 		<div>
-			<Link to="/cart" className="">
+			<Link to="/cart" className="text-white">
 				<div>
 					<BiCartAlt size={30} />
 				</div>
-				{count > 0 && <span className="flex justify-center ">{count}</span>}
+				{count > 0 && <span className=" justify-center text-decoration-none  ">{count}</span>}
 			</Link>
 		</div>
 	);

@@ -22,7 +22,7 @@ const ItemDetail = ({ item }) => {
 			setCurrentStock(currentStock - count);
 			addItem(item, count);
 		}
-	}
+	}                                                         
 
 	function handleCheckout() {
 		navigate('/cart');
@@ -32,7 +32,11 @@ const ItemDetail = ({ item }) => {
 		<div className=" container text-center card-effect border border-secondary border-opacity-50 cuadro bg-light">
 			<div className="card-body  text-dark">{item.name}</div>
 			<div>
-				{!img ? ("Loading...") : (<img className=" h-10 w-25 flex cuadro" src={img} alt={item.name} />)}	
+				{!img ? (
+					'Loading...'
+				) : (
+					<img className=" h-10 w-25 flex cuadro" src={img} alt={item.name} />
+				)}
 			</div>
 			<div className="text-center">
 				<p className="mt-4">{item.description}</p>
